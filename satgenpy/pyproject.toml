@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "satgenpy"
-version = "0.3.0"
+version = "0.4.0"
 description = "Satellite network generation and analysis utilities from the Hypatia framework"
 readme = "README.md"
 license = "MIT"
@@ -24,7 +24,7 @@ geopy = "*"
 matplotlib = "*"
 statsmodels = "*"
 cartopy = "*"
-exputil = { git = "https://github.com/snkas/exputilpy.git", tag = "v1.6" }
+exputil = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
