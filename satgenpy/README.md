@@ -1,4 +1,58 @@
-# satgenpy: Satellite network generation
+# satgenpy — Satellite Network Generation Utilities (from Hypatia)
+
+`satgenpy` provides tools to generate and analyze Low-Earth-Orbit (LEO)
+satellite networks. It produces all configuration and state files needed
+to analyze or simulate dynamic satellite constellations, including
+ground stations, inter-satellite links (ISLs), and dynamic forwarding
+states.
+
+Originally part of the [**Hypatia** project](https://github.com/snkas/hypatia)
+by **Stefan Kassing**, this PyPI release is maintained by **Lei Yuan**
+for easier installation and reuse in research and engineering workflows.
+
+---
+
+## Installation
+
+Requires **Python ≥ 3.8**.
+
+Install directly from PyPI:
+
+```bash
+pip install satgenpy
+```
+
+If cartopy fails to build, make sure the following geospatial system
+libraries are installed (on Ubuntu/Debian):
+```bash
+sudo apt-get install libproj-dev proj-data proj-bin libgeos-devpip
+```
+
+## Example
+
+```python
+import satgen
+from satgen.dynamic_state import generate_dynamic_state
+
+# Generate dynamic state for an example constellation
+generate_dynamic_state(
+    output_dir="example_output/",
+    tles_path="data/tles.txt",
+    ground_stations_path="data/ground_stations.txt"
+)
+```
+
+## Running tests (optional)
+
+The test suite includes plotting utilities that require gnuplot:
+The following five things need to be generated to analyze / simulate a LEO satellite network:
+
+```bash
+sudo apt-get install gnuplot
+pytest
+```
+
+## Overview
 
 The following five things need to be generated to analyze / simulate a LEO satellite network:
 
@@ -10,19 +64,6 @@ The following five things need to be generated to analyze / simulate a LEO satel
 6. `dynamic_state/` : Dynamic state which encompasses (a) forwarding state (fstate) and (b) gsl interface bandwidth (gsl_if_bandwidth)
 
 This repository enables you to do so.
-
-## Getting started
-
-1. Python 3.7+
-
-2. The following dependencies need to be installed:
-
-   ```
-   pip install numpy astropy ephem networkx sgp4 geopy matplotlib statsmodels
-   sudo apt-get install libproj-dev proj-data proj-bin libgeos-dev
-   pip install cartopy
-   pip install git+https://github.com/snkas/exputilpy.git@v1.6
-   ```
 
 ## Dynamic state algorithms
 

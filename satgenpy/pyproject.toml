@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "satgenpy"
-version = "0.2.0"
+version = "0.3.0"
 description = "Satellite network generation and analysis utilities from the Hypatia framework"
 readme = "README.md"
 license = "MIT"
@@ -14,6 +14,7 @@ packages = [{ include = "satgen" }]
 
 [tool.poetry.dependencies]
 python = ">=3.8"
+pytest = ">=7.0"
 numpy = "*"
 astropy = "*"
 ephem = "*"
