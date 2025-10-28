@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "satgenpy"
+version = "0.2.0"
+description = "Satellite network generation and analysis utilities from the Hypatia framework"
+readme = "README.md"
+license = "MIT"
+authors = ["Stefan Kassing <snkas@users.noreply.github.com>"]
+maintainers = ["Lei Yuan <yuanl14159@gmail.com>"]
+repository = "https://github.com/yuanlott/hypatia"
+homepage = "https://github.com/snkas/hypatia"
+
+# 👇 the magic line that fixes your error
+packages = [{ include = "satgen" }]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+numpy = "*"
+astropy = "*"
+ephem = "*"
+networkx = "*"
+sgp4 = "*"
+geopy = "*"
+matplotlib = "*"
+statsmodels = "*"
+cartopy = "*"
+exputil = { git = "https://github.com/snkas/exputilpy.git", tag = "v1.6" }
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
